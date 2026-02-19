@@ -23,7 +23,7 @@ const Header = () => {
     >
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
         <h1 style={{ margin: 0, fontSize: '1.5rem', fontWeight: 'bold' }}>
-          <span style={{ color: 'white' }}>Nepal Telecom</span> <span style={{ fontSize: '0.8rem', fontWeight: 'normal', opacity: 0.8 }}>Clone</span>
+          <span style={{ color: 'white' }}>Kiran Acharya</span> <span style={{ fontSize: '0.8rem', fontWeight: 'normal', opacity: 0.8 }}>Bio</span>
         </h1>
         <nav>
           <ul style={{ display: 'flex', listStyle: 'none', margin: 0, padding: 0, gap: '2rem' }}>
