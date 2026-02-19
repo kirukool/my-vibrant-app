@@ -1,39 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Layers, Code, Layout } from 'lucide-react';
+import { Layers, Layout } from 'lucide-react';
 
 const Projects = () => {
     const projects = [
         {
             title: 'ProCMS',
-            description: 'A robust Content Management System built with Python and Django. Designed for scalability and ease of content administration.',
+            description: 'Enterprise-grade Content Management System built with Python and Django. Scalable architecture for high-traffic environments.',
             tags: ['Python', 'Django', 'Backend'],
-            icon: <Layers size={40} />,
-            color: 'var(--accent-secondary)'
+            icon: <Layers size={32} />,
+            color: 'var(--accent-primary)'
         },
         {
             title: 'Personal Portfolio',
-            description: 'A vibrant, interactive personal website built with React and Vite. Features neon aesthetics, smooth animations, and Coolify deployment.',
-            tags: ['React', 'Vite', 'Framer Motion', 'Coolify'],
-            icon: <Layout size={40} />,
-            color: 'var(--accent-primary)'
+            description: 'Responsive personal website demonstrating modern web technologies and automated deployment pipelines via Coolify.',
+            tags: ['React', 'Vite', 'Coolify'],
+            icon: <Layout size={32} />,
+            color: 'var(--accent-tertiary)'
         },
-        // Add more projects here as needed
     ];
 
     return (
-        <section id="projects" style={{ padding: '5rem 0' }}>
+        <section id="projects" style={{ padding: '5rem 0', background: 'var(--bg-secondary)' }}>
             <div className="container">
-                <motion.h2
-                    className="gradient-text"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5 }}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center' }}
+                    style={{ textAlign: 'center', marginBottom: '3rem' }}
                 >
-                    My Works
-                </motion.h2>
+                    <h2 style={{ fontSize: '2.5rem', color: 'var(--accent-primary)', marginBottom: '1rem' }}>
+                        Our Projects
+                    </h2>
+                    <div style={{ width: '60px', height: '4px', background: 'var(--accent-tertiary)', margin: '0 auto' }}></div>
+                </motion.div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
                     {projects.map((project, index) => (
@@ -44,27 +44,52 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            whileHover={{ y: -10, boxShadow: `0 10px 30px -10px ${project.color}` }}
-                            style={{ padding: '2rem', display: 'flex', flexDirection: 'column', height: '100%' }}
+                            style={{
+                                padding: '0',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                height: '100%',
+                                background: 'white',
+                                overflow: 'hidden',
+                                border: 'none',
+                                borderBottom: `4px solid ${project.color}`
+                            }}
                         >
-                            <div style={{ color: project.color, marginBottom: '1.5rem' }}>
-                                {project.icon}
+                            <div style={{ padding: '2rem', flex: 1 }}>
+                                <div style={{
+                                    color: project.color,
+                                    marginBottom: '1rem',
+                                    display: 'inline-block',
+                                    padding: '10px',
+                                    background: '#f4f6f8',
+                                    borderRadius: '8px'
+                                }}>
+                                    {project.icon}
+                                </div>
+
+                                <h3 style={{ fontSize: '1.5rem', margin: '0 0 1rem 0', color: 'var(--accent-primary)' }}>{project.title}</h3>
+                                <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+                                    {project.description}
+                                </p>
                             </div>
 
-                            <h3 style={{ fontSize: '1.8rem', margin: '0 0 1rem 0' }}>{project.title}</h3>
-                            <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', flex: 1 }}>
-                                {project.description}
-                            </p>
-
-                            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: 'auto' }}>
+                            <div style={{
+                                padding: '1rem 2rem',
+                                background: '#f9fafb',
+                                borderTop: '1px solid #eee',
+                                display: 'flex',
+                                gap: '0.5rem',
+                                flexWrap: 'wrap'
+                            }}>
                                 {project.tags.map(tag => (
                                     <span key={tag} style={{
-                                        fontSize: '0.8rem',
-                                        padding: '0.3rem 0.8rem',
-                                        borderRadius: '20px',
-                                        background: 'rgba(255,255,255,0.05)',
-                                        border: '1px solid rgba(255,255,255,0.1)',
-                                        color: project.color
+                                        fontSize: '0.75rem',
+                                        padding: '0.2rem 0.6rem',
+                                        borderRadius: '4px',
+                                        background: 'white',
+                                        border: '1px solid #ddd',
+                                        color: '#666',
+                                        fontWeight: 500
                                     }}>
                                         {tag}
                                     </span>

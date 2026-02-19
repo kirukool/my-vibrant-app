@@ -1,29 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { User, Mail } from 'lucide-react';
 
 const Hero = () => {
     return (
         <section id="home" style={{
-            minHeight: '100vh',
+            minHeight: '80vh',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            position: 'relative',
-            paddingTop: '80px' // for header
+            paddingTop: 'var(--header-height)',
+            background: 'linear-gradient(to bottom, #f4f6f8 0%, #eef2f5 100%)'
         }}>
             <div className="container" style={{ textAlign: 'center' }}>
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
+                    initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.6 }}
                     style={{ marginBottom: '2rem' }}
                 >
                     <div style={{
-                        width: '150px',
-                        height: '150px',
+                        width: '120px',
+                        height: '120px',
                         borderRadius: '50%',
-                        background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary))',
+                        background: 'var(--accent-primary)',
                         margin: '0 auto',
                         display: 'flex',
                         alignItems: 'center',
@@ -31,59 +31,67 @@ const Hero = () => {
                         fontSize: '3rem',
                         color: '#fff',
                         fontWeight: 'bold',
-                        boxShadow: '0 0 30px rgba(0, 242, 255, 0.3)'
+                        border: '4px solid white',
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.1)'
                     }}>
-                        K
+                        <User size={60} />
                     </div>
                 </motion.div>
 
                 <motion.h1
-                    className="gradient-text"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.8 }}
-                    style={{ fontSize: '4rem', margin: '0 0 1rem 0', lineHeight: 1.1 }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
+                    style={{
+                        fontSize: '3rem',
+                        color: 'var(--accent-primary)',
+                        marginBottom: '0.5rem',
+                        fontWeight: 'bold'
+                    }}
                 >
-                    Hello, I'm Kiran.
+                    Namaste, I'm Kiran.
                 </motion.h1>
+
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                    style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', fontWeight: 'normal', margin: '0 0 2rem 0' }}
+                >
+                    Connecting People through Digital Solutions.
+                </motion.h2>
 
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.8 }}
-                    style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 3rem auto' }}
+                    transition={{ delay: 0.4, duration: 0.6 }}
+                    style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', maxWidth: '700px', margin: '0 auto 3rem auto' }}
                 >
-                    I build vibrant and simple digital experiences.
-                    Currently testing <span style={{ color: 'var(--accent-primary)' }}>Coolify</span> deployments.
+                    Specializing in robust web applications and seamless deployments using Coolify.
+                    Bringing the reliability of enterprise telecom to personal projects.
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1, duration: 1 }}
+                    transition={{ delay: 0.6, duration: 0.6 }}
+                    style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}
                 >
-                    <a href="#about" style={{
-                        display: 'inline-block',
-                        animation: 'bounce 2s infinite',
-                        color: 'var(--text-secondary)'
+                    <a href="#contact" className="btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+                        <Mail size={18} /> Contact Me
+                    </a>
+                    <a href="#projects" style={{
+                        padding: '0.8rem 2rem',
+                        border: '2px solid var(--accent-primary)',
+                        borderRadius: '4px',
+                        color: 'var(--accent-primary)',
+                        fontWeight: 'bold',
+                        textDecoration: 'none'
                     }}>
-                        <ArrowDown size={32} />
+                        View Works
                     </a>
                 </motion.div>
             </div>
-
-            {/* Background Glow */}
-            <div style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                width: '600px',
-                height: '600px',
-                background: 'radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%)',
-                zIndex: -1,
-                pointerEvents: 'none'
-            }} />
         </section>
     );
 };

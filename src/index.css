@@ -1,14 +1,20 @@
 :root {
-  --bg-primary: #0a0e17;
-  --bg-secondary: #111625;
-  --text-primary: #e0e6ed;
-  --text-secondary: #94a3b8;
-  --accent-primary: #00f2ff; /* Neon Cyan */
-  --accent-secondary: #ff00ff; /* Neon Magenta */
-  --accent-tertiary: #7000ff; /* Electric Purple */
-  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  
+  /* NTC Brand Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f4f6f8;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --accent-primary: #0055a4;
+  /* NTC Blue */
+  --accent-secondary: #003366;
+  /* Darker Blue */
+  --accent-tertiary: #fbb03b;
+  /* NTC Yellow/Orange */
+  --font-main: 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
+
   --transition-speed: 0.3s;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --header-height: 70px;
 }
 
 body {
@@ -18,7 +24,6 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 * {
@@ -32,7 +37,7 @@ a {
 }
 
 a:hover {
-  color: var(--accent-secondary);
+  text-decoration: underline;
 }
 
 button {
@@ -49,6 +54,7 @@ button {
 }
 
 .gradient-text {
+  /* For NTC, we might want solid blue, but let's keep a subtle gradient */
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -56,8 +62,22 @@ button {
 }
 
 .glass-panel {
-  background: rgba(17, 22, 37, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  /* Replaced glass with solid card style */
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-secondary);
 }
