@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Header = () => {
   return (
-    <motion.header 
+    <motion.header
       className="glass-panel"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -23,7 +23,7 @@ const Header = () => {
         </h1>
         <nav>
           <ul style={{ display: 'flex', listStyle: 'none', margin: 0, padding: 0, gap: '2rem' }}>
-            {['Home', 'About', 'Contact'].map((item) => (
+            {['Home', 'About', 'Projects', 'Contact'].map((item) => (
               <li key={item}>
                 <a href={`#${item.toLowerCase()}`} style={{ fontWeight: 500 }}>{item}</a>
               </li>

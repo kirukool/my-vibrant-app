@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
 import About from './components/About';
+import Projects from './components/Projects';
 import InteractiveWidget from './components/InteractiveWidget';
 
 function App() {
@@ -11,6 +10,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Projects />
         <InteractiveWidget />
       </main>
 
